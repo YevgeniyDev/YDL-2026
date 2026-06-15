@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bolt &amp; Frost — Robot Co-op</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game">
+    <header class="topbar">
+      <h1>Bolt &amp; Frost</h1>
+      <p class="tag">A two-robot co-op puzzle platformer · play on one keyboard</p>
+    </header>
+
+    <nav class="level-select">
+      <button id="menu-btn" class="menu-btn">☰ Menu</button>
+      <span class="ls-label">Level select:</span>
+      <div id="level-bar" class="level-bar"></div>
+    </nav>
+
+    <div class="stage">
+      <canvas id="game" width="880" height="560"></canvas>
+
+      <div id="end-modal" class="modal">
+        <div class="modal-card">
+          <h2>Run finished! 🏁</h2>
+          <p id="final-stats"></p>
+          <div id="save-row" class="save-row">
+            <input id="name-input" maxlength="8" placeholder="YOUR NAME" autocomplete="off" />
+            <button id="save-btn">Save score</button>
+          </div>
+          <button id="again-btn" class="again-btn">Play again (Level 1)</button>
+        </div>
+      </div>
+
+      <div id="menu" class="modal">
+        <div class="modal-card menu-card">
+          <h2>Bolt &amp; Frost</h2>
+          <p>Local co-op — P1 <b>WASD</b>, P2 <b>arrows</b>.<br />Grab keys &amp; coins, then both reach your doors.</p>
+          <button id="start-btn" class="big-btn">▶ Start Game</button>
+          <button id="resume-btn" class="big-btn alt">Resume</button>
+          <button id="restart-btn" class="big-btn alt">↻ Restart from Level 1</button>
+          <button id="sound-btn" class="big-btn alt">🔊 Sound: On</button>
+        </div>
+      </div>
+
+      <div id="confirm-modal" class="modal">
+        <div class="modal-card">
+          <h2>Skip ahead?</h2>
+          <p id="confirm-text"></p>
+          <div class="save-row">
+            <button id="confirm-yes">Start here</button>
+            <button id="confirm-no">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="legend">
+      <div class="col">
+        <h2 class="bolt">Bolt — Player 1</h2>
+        <p class="keys"><kbd>W</kbd> jump · <kbd>A</kbd> left · <kbd>D</kbd> right</p>
+        <p>Walks safely through <span class="chip plasma">plasma</span>.
+           Destroyed by <span class="chip coolant">coolant</span>.</p>
+      </div>
+      <div class="col">
+        <h2 class="frost">Frost — Player 2</h2>
+        <p class="keys"><kbd>&uarr;</kbd> jump · <kbd>&larr;</kbd> left · <kbd>&rarr;</kbd> right</p>
+        <p>Walks safely through <span class="chip coolant">coolant</span>.
+           Destroyed by <span class="chip plasma">plasma</span>.</p>
+      </div>
+      <div class="col">
+        <h2>Mission &amp; scoring</h2>
+        <p>Grab your <b>key</b> + <span class="chip coin">coins</span>, then both reach your <b>door</b>.
+           <span class="chip acid">acid</span> kills both. <kbd>R</kbd> restarts a level.</p>
+        <p>Stand on a <b>button</b> to hold its <b>gate</b> open for your partner.</p>
+        <p><b>Stomp enemies</b> from above for points — side contact is fatal.</p>
+        <p><b>Push crates</b> into place or onto buttons; climb them to reach ledges.</p>
+        <p>Score = coins + clear bonus + speed bonus − deaths.</p>
+      </div>
+    </section>
+
+    <section class="board">
+      <h2>🏆 Leaderboard — top runs</h2>
+      <table class="leaderboard">
+        <thead>
+          <tr><th>#</th><th>Name</th><th>Score</th><th>Coins</th><th>Time</th><th>Levels</th></tr>
+        </thead>
+        <tbody id="lb-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

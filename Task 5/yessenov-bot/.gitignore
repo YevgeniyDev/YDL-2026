@@ -1,0 +1,15 @@
+# Secrets — never commit
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# The built vector index can be regenerated from data/raw via `python -m engine.ingest`.
+# Keep raw markdown (reproducible KB) committed, but ignore the binary index by default.
+data/index/

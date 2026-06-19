@@ -1,0 +1,10 @@
+# Theme matched to yessenovfoundation.org — purple brand on clean white, system sans-serif.
+[theme]
+primaryColor = "#7B2E83"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F5EFF7"
+textColor = "#1E1E1E"
+font = "sans serif"
+
+[server]
+headless = true

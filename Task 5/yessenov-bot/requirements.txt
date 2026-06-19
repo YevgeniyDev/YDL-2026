@@ -1,0 +1,20 @@
+# Core
+streamlit>=1.36
+openai>=1.40           # OpenAI-compatible client for the client's chat + embedding endpoints
+numpy>=1.26            # file-based vector store (default backend)
+python-dotenv>=1.0     # load secrets from .env
+
+# Scraping
+requests>=2.31
+beautifulsoup4>=4.12
+lxml>=5.0              # fast parser for BeautifulSoup
+
+# Language detection (answer in the user's language)
+langdetect>=1.0.9
+
+# Email (button-triggered conversation summary to admin)
+mailersend>=0.5
+
+# Optional: only needed if the corpus is large enough to switch to the pgvector backend
+# psycopg[binary]>=3.1
+# pgvector>=0.2

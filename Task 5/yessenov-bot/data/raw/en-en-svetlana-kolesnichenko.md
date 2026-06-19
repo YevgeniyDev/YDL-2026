@@ -1,0 +1,35 @@
+---
+source_url: https://yessenovfoundation.org/en/svetlana-kolesnichenko
+lang: en
+title: Svetlana Kolesnichenko | Shakhmardan Yessenov Foundation
+---
+
+The material is also available in:
+
+Specialization: Microbiology. Internship: Institut Gustave Roussy , France.
+
+Neurologist Svetlana Kolesnichenko, 33, originally from Shymkent, graduated from the Karaganda State Medical University . After winning a grant from the Shakhmardan Yessenov Foundation , the Kazakhstani scientist completed an internship in the spring of 2023 at one of the world’s leading research centers specializing in oncological diseases.
+
+How did specialization in microbiology begin? In my third year at medical university, I fell in love with microbiology and started attending our university’s Scientific Research Center. It was in that laboratory that I completed my first scientific project. After that, I was invited to join larger projects as a research fellow. That’s how I became part of a wonderful group where I grew both as a doctor and as a scientist.
+
+The Yessenov Foundation Competition The director of the Scientific Research Center sent me a link with information about the competition. Without getting my hopes up, I filled out the application, prepared the documents, submitted everything, and forgot about it for a while. However, I passed the first stage, and started working even harder. My desire to go on an internship strengthened. The competition was quite interesting. Why? Because the winners were selected through both individual and group interviews, not just based on the documents they submitted. We were divided into small groups and worked together to solve various tasks. That’s how I got to know the other grant applicants – amazing people. I really liked the Foundation’s team, whom we interacted with throughout the selection process and after the internship. I have very warm memories of the whole experience.
+
+Why did I win, and what advice can I give? I’m a hardworking and diligent person. I believe the organizers recognized that, along with the scientific work I had already accomplished. For those planning to take part in the competition in the future, my advice is: don’t be afraid of anything, face challenges with resilience, and always stay focused on your goal. The outcome will outweigh all the negative moments. And to future winners, I would recommend starting to write letters to laboratories as early as possible, since abroad, the selection process for summer internships starts as early as the beginning of the academic year.
+
+How did I search for a laboratory? It was a long and challenging journey. I sent out 75 letters to different parts of the world: the USA, Canada, and countries of the European Union. I found common ground with only five professors, and just two of them invited me to join their labs. In the end, I chose France. I received my visa quite late, so the internship began only in March 2023. However, during the search for the lab, I found new friends among the winners of the Foundation’s programs. Sultan Mussakhan was especially helpful and supportive throughout the process.
+
+How did the internship go? The internship took place at Institut Gustave Roussy , one of the world’s most renowned cancer treatment centers. The institute provides diagnostics and treatment for various types of cancer in patients of all ages and stages of the disease. It also has a research center with numerous departments. I worked in a team focused on studying cancer cell metabolism and exploring new therapeutic approaches. However, the team’s work was not limited to oncology. The scientists are also investigating the mechanisms of immunosuppression in HIV and neuropsychiatric disorders. My supervisor was Dr. Yegor Vassetzky .
+
+Despite the delayed start of the internship, I began working on the project, the pathophysiology of schizophrenia, remotely back in December 2022. I identified two patients in Astana with a rare genetic disorder, DiGeorge syndrome, who agreed to participate in the project and provided me with their blood samples and medical history data.
+
+What did I achieve? During the internship, I developed a laboratory model that allowed specific genes in brain cells to be ‘switched on’ or ‘switched off’ in order to simulate conditions occurring in the body in certain psychiatric disorders. This is a safe method for studying complex genetic diseases that opens up possibilities for developing new approaches to treatment. As part of the process, I gained new skills in working with cell cultures, including cloning, transformation, transfection, and Western blotting. This work requires precision and a great deal of patience, which proved to be a serious challenge for me. During the internship, I also began co-authoring a research paper on chromosomal abnormalities in schizophrenia with my colleagues. While in Paris, I had the opportunity to attend the Créer du lien conference, dedicated to autism-related issues.
+
+What discoveries did I make in France? My overall impression of the internship and the laboratory is overwhelmingly positive. All staff members worked in a coordinated, engaged, and highly professional manner. Necessary reagents were delivered quickly and easily – something that is often very difficult in Kazakhstan, where everything has to be planned well in advance. I was truly impressed by the rational and thoughtful organization of the research facility, and its own in-house cryostorage system with a continuous supply of liquid nitrogen for sample preservation. As for the new technologies, I was fortunate to gain hands-on experience with a confocal microscope. It allows you to examine a three-dimensional image of a cell after it has been scanned. The internship was also an incredible life experience. I realized that it’s important not to be shy, to live in the moment, to stand up for your rights, and to make sure to take breaks from work.
+
+Free time during the internship On weekends, I explored Paris, went sightseeing and visited museums. I also had the chance to travel to the wonderful Portuguese city of Porto and the Norman town of Étretat . The experience was unforgettable. I had long dreamed of visiting Porto – a warm, lively, and welcoming city. As for Normandy, I traveled there with a group of friends. We had a packed itinerary and visited five more cities along the way, immersing ourselves in French culture. I even started a Telegram channel and kept a sort of diary, sharing my impressions of both the internship and life in Paris.
+
+What’s now and what’s next? I am currently in Canada, exploring job opportunities – including PhD programs in research, while also preparing for the medical licensing exam to validate my diploma. There are many renowned research centers here that I would like to join.
+
+24.11.25, Stories
+
+Seen by: 399

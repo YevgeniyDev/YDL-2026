@@ -73,26 +73,63 @@ _RULES = {
     ),
 }
 
-# Date-awareness so the bot can reason about which cycle is current / passed / upcoming.
+# The bot's only source of "now" is the system clock, injected into the prompt. We report it
+# in Astana time (GMT+5, no daylight saving in Kazakhstan) since that's how the foundation
+# states deadlines — so reasoning about "has the deadline passed" is correct regardless of
+# where the app is deployed.
+_ASTANA_TZ = datetime.timezone(datetime.timedelta(hours=5))
+
+
+def _now_str() -> str:
+    return datetime.datetime.now(_ASTANA_TZ).strftime("%d.%m.%Y %H:%M")
+
+
+# Date/time-awareness so the bot can reason about which cycle is current / passed / upcoming.
 _DATE_NOTE = {
-    "ru": "Сегодня {date}. В контексте могут быть даты разных лет. Всегда указывай, к какому "
-          "году относится дедлайн; если он уже прошёл относительно сегодняшней даты — прямо "
-          "скажи об этом. Даты приёма на следующий год обычно публикуются на сайте фонда в "
-          "январе–феврале — если их ещё нет, так и скажи и предложи следить за сайтом.",
-    "en": "Today is {date}. The context may contain dates from different years. Always state which "
-          "year a deadline belongs to; if it has already passed relative to today, say so plainly. "
-          "Dates for next year's cycle are usually published on the foundation site in "
-          "January–February — if they aren't available yet, say so and suggest watching the site.",
-    "kk": "Бүгін {date}. Контексте әртүрлі жылдардың күндері болуы мүмкін. Дедлайн қай жылға "
-          "қатысты екенін әрқашан көрсет; егер ол бүгінгі күнге қарай өтіп кеткен болса — оны "
-          "ашық айт. Келесі жылғы қабылдау күндері әдетте қаңтар–ақпанда сайтта жарияланады — "
-          "егер әлі жоқ болса, солай деп айт та, сайтты қадағалауды ұсын.",
+    "ru": "Сейчас {now} (время Астаны, GMT+5). В контексте могут быть даты разных лет. Всегда "
+          "указывай, к какому году относится дедлайн; если он уже прошёл относительно текущей "
+          "даты — прямо скажи об этом. Даты приёма на следующий год обычно публикуются на сайте "
+          "фонда в январе–феврале — если их ещё нет, так и скажи и предложи следить за сайтом.",
+    "en": "It is now {now} (Astana time, GMT+5). The context may contain dates from different "
+          "years. Always state which year a deadline belongs to; if it has already passed relative "
+          "to now, say so plainly. Dates for next year's cycle are usually published on the "
+          "foundation site in January–February — if they aren't available yet, say so and suggest "
+          "watching the site.",
+    "kk": "Қазір {now} (Астана уақыты, GMT+5). Контексте әртүрлі жылдардың күндері болуы мүмкін. "
+          "Дедлайн қай жылға қатысты екенін әрқашан көрсет; егер ол қазіргі күнге қарай өтіп кеткен "
+          "болса — оны ашық айт. Келесі жылғы қабылдау күндері әдетте қаңтар–ақпанда сайтта "
+          "жарияланады — егер әлі жоқ болса, солай деп айт та, сайтты қадағалауды ұсын.",
 }
 
 
 def _date_note(lang: str) -> str:
-    today = datetime.date.today().strftime("%d.%m.%Y")
-    return _DATE_NOTE[lang].format(date=today)
+    return _DATE_NOTE[lang].format(now=_now_str())
+
+
+# Direct answer when the user simply asks what the current date/time is.
+_NOW_TRIGGERS = (
+    "который час", "сколько времени", "сколько сейчас врем", "текущее время", "текущая дата",
+    "какое сегодня число", "какая сегодня дата", "какой сейчас год", "какое сейчас время",
+    "what time", "what's the time", "what is the time", "current time", "current date",
+    "what date", "today's date", "todays date", "what day is it",
+    "сағат неше", "қазір сағат", "бүгін қай күн", "бүгін нешесі",
+)
+_NOW_REPLY = {
+    "ru": "Сейчас {now} (время Астаны, GMT+5).",
+    "en": "It's currently {now} (Astana time, GMT+5).",
+    "kk": "Қазір {now} (Астана уақыты, GMT+5).",
+}
+
+
+def _now_answer(question: str, lang: str) -> str | None:
+    q = question.lower()
+    hit = any(t in q for t in _NOW_TRIGGERS)
+    # "час" with a question word, in any word order ("который сейчас час", "сколько час")
+    if not hit and "час" in q and any(w in q for w in ("котор", "сейчас", "сколько", "скольк")):
+        hit = True
+    if hit:
+        return _NOW_REPLY[lang].format(now=_now_str())
+    return None
 
 
 # Warm confirmation shown once the user shares their contact — the email goes to the manager.
@@ -209,6 +246,11 @@ def answer(question: str, memory: Memory | None = None) -> Answer:
     contact = extract_contact(question)
     if contact:
         return Answer(text=_LEAD_THANKS[lang], hits=[], grounded=False, lang=lang, lead=contact)
+
+    # Direct "what's the date/time now?" — answered straight from the clock (not the KB).
+    now_reply = _now_answer(question, lang)
+    if now_reply:
+        return Answer(text=now_reply, hits=[], grounded=True, lang=lang)
 
     search_query = contextualize(question, memory)
     hits = retriever.retrieve(search_query)
